@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АКОШШШ ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      overflow: hidden;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 500px;
+      padding: 50px 30px;
+      text-align: center;
+      background: white;
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .heart {
+      font-size: 75px;
+      animation: pulse 1s infinite;
+    }
+
+    h1 {
+      color: #ff416c;
+      font-size: 42px;
+      margin: 15px 0;
+    }
+
+    h2 {
+      color: #222;
+      margin: 30px 0;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      min-height: 70px;
+    }
+
+    button {
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background: #ff416c;
+      color: white;
+    }
+
+    .yes:hover {
+      transform: scale(1.1);
+    }
+
+    .no {
+      background: #eee;
+      color: #555;
+    }
+
+    .big-heart {
+      font-size: 90px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      50% {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+    <div class="card" id="card">
+
+      <div id="question">
+        <div class="heart">❤️</div>
+
+        <h1>АКОШШШ</h1>
+
+        <h2>Қалаға шығасың ба ?</h2>
+
+        <div class="buttons">
+          <button class="yes" onclick="sayYes()">
+            Да
+          </button>
+
+          <button
+            class="no"
+            id="noButton"
+            onmouseenter="moveButton()"
+          >
+            Неа 😅
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function moveButton() {
+      const button = document.getElementById("noButton");
+
+      const x = Math.random() * 250 - 125;
+      const y = Math.random() * 150 - 75;
+
+      button.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    function sayYes() {
+      const card = document.getElementById("card");
+
+      card.innerHTML = `
+        <div>
+          <div class="big-heart">💖</div>
+          <h1>Урааа! ❤️</h1>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
